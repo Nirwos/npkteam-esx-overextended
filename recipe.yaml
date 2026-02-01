@@ -110,6 +110,10 @@ tasks:
     dest: ./resources/[ox]
     src: ./tmp/files/ox_doorlock.zip
 
+  # Remove conflicting ESX inventory (we use ox_inventory)
+  - action: remove_path
+    path: ./resources/[esx_addons]/esx_inventory
+
   ## Cleanup
   - action: remove_path
     path: ./tmp
