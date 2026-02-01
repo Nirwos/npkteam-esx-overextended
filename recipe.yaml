@@ -67,36 +67,48 @@ tasks:
     ref: main
     dest: ./resources/[standalone]/pma-voice
 
-  # Download Overextended resources
-  - action: download_github
-    src: https://github.com/communityox/ox_lib
-    ref: main
-    dest: ./resources/[ox]/ox_lib
+  # Download Overextended resources (latest releases)
+  - action: download_file
+    path: ./tmp/files/ox_lib.zip
+    url: https://github.com/communityox/ox_lib/releases/latest/download/ox_lib.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/files/ox_lib.zip
 
-  - action: download_github
-    src: https://github.com/communityox/oxmysql
-    ref: main
-    dest: ./resources/[ox]/oxmysql
+  - action: download_file
+    path: ./tmp/files/oxmysql.zip
+    url: https://github.com/communityox/oxmysql/releases/latest/download/oxmysql.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/files/oxmysql.zip
 
-  - action: download_github
-    src: https://github.com/communityox/ox_inventory
-    ref: main
-    dest: ./resources/[ox]/ox_inventory
+  - action: download_file
+    path: ./tmp/files/ox_inventory.zip
+    url: https://github.com/communityox/ox_inventory/releases/latest/download/ox_inventory.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/files/ox_inventory.zip
 
-  - action: download_github
-    src: https://github.com/communityox/ox_target
-    ref: main
-    dest: ./resources/[ox]/ox_target
+  - action: download_file
+    path: ./tmp/files/ox_target.zip
+    url: https://github.com/communityox/ox_target/releases/latest/download/ox_target.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/files/ox_target.zip
 
-  - action: download_github
-    src: https://github.com/communityox/ox_fuel
-    ref: main
-    dest: ./resources/[ox]/ox_fuel
+  - action: download_file
+    path: ./tmp/files/ox_fuel.zip
+    url: https://github.com/communityox/ox_fuel/releases/latest/download/ox_fuel.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/files/ox_fuel.zip
 
-  - action: download_github
-    src: https://github.com/communityox/ox_doorlock
-    ref: main
-    dest: ./resources/[ox]/ox_doorlock
+  - action: download_file
+    path: ./tmp/files/ox_doorlock.zip
+    url: https://github.com/communityox/ox_doorlock/releases/latest/download/ox_doorlock.zip
+  - action: unzip
+    dest: ./resources/[ox]
+    src: ./tmp/files/ox_doorlock.zip
 
   ## Cleanup
   - action: remove_path
